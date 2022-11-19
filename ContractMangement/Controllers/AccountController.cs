@@ -13,5 +13,13 @@ namespace ContractMangement.Controllers
         {
             return View();
         }
+        public ActionResult Singup()
+        {
+            return View();
+        }
+        public ActionResult AccountCreate()
+        {
+            return View();
+        }
     }
 }

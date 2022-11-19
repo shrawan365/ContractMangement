@@ -2,70 +2,31 @@
 @{
     Layout = null;
 }
-
-
-
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title> Admin Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-    <style>
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: red;
-            color: white;
-            text-align: center;
-        }
-    </style>
+    <title>Simple login form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/css/style.css">
 </head>
-
-<body style="background-image: url('/Images/bg.jpg'); background-size: cover;">
-    <div class="content-wrapper" >
-        <div class="container">
-            <div class="row justify-content-center ">
-
-                <div class="col-md-4 mt-5">
-
-                    <div class="card" style="border-top: solid 3px #ff6a00; border-bottom: solid 1px #ffd800; background-color: rgba(11, 15, 47,0.4)">
-                        <div class="card-header" style="background-color: rgba(249, 250, 253, 0.2); color: white;text-align:center">
-                           
-                            <h2 style="text-align: center">Login</h2>
-                        </div>
-                        <form name="lgfrm" >
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label style="color: white">User Name</label>
-                                    <input type="text" ID="Txtusername" class="form-control"  placeholder="Enter Username" required />
-                                </div>
-                                <div class="form-group">
-                                    <label style="color: white">Password</label>
-
-                                    <input type="password" ID="Txtpassword" class="form-control" placeholder="Enter Password" required />
-                                </div>
-
-                            </div>
-                            <div class="card-footer gap-2 d-flex  justify-content-end">
-                                <input type="submit" value="Log In" class="btn btn-primary pull-right" />
-                                <input type="submit" value="Cancel" class="btn btn-danger" />
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
+<body>
+    <form action="/action_page.php">
+        <h1>Login Form</h1>
+        <div class="formcontainer">
+            <hr />
+            <div class="container">
+                <label for="uname"><strong>Username</strong></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="psw"><strong>Password</strong></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
             </div>
-        </div>
-    </div>
+            <button type="submit">Login</button>
+            <div class="container" style="background-color: #eee">
+                <label style="padding-left: 15px">
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <span class="psw"><a href="/Account/Singup"> Sign up</a></span>
+            </div>
+    </form>
 </body>
 </html>
-

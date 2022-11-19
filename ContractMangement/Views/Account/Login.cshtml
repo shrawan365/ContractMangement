@@ -1,7 +1,10 @@
-﻿
+﻿@model ContractMangement.Models.CustomModel.LoginModel
+
+
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,23 +13,31 @@
     <link rel="stylesheet" href="~/Content/css/style.css">
 </head>
 <body>
-    <form action="/action_page.php">
+   
+    @using (Html.BeginForm("Login", "Account"))
+    {
         <h1>Login Form</h1>
         <div class="formcontainer">
+            @if (@ViewBag.error != null)
+            {
+                <script>alert("Username and password is incorrect")</script>
+            }
             <hr />
             <div class="container">
                 <label for="uname"><strong>Username</strong></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input type="text" placeholder="Enter Username" name="Username" required autocomplete="off">
                 <label for="psw"><strong>Password</strong></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" name="Password" required autocomplete="off">
             </div>
-            <button type="submit">Login</button>
+            <input type="submit" value="Login" />
             <div class="container" style="background-color: #eee">
                 <label style="padding-left: 15px">
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
                 <span class="psw"><a href="/Account/Singup"> Sign up</a></span>
             </div>
-    </form>
+        </div>
+    }
 </body>
 </html>
+
